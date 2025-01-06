@@ -1,0 +1,13 @@
+To solve this, you should either:
+
+1. **Reduce the width of the items:** Adjust the `width` property of the `.item` class to ensure the total width (including padding, borders, and margins) doesn't exceed the container's width.
+
+2. **Use a different flex justification:** If you can't reduce the item widths, consider using `justify-content: space-around` or `justify-content: flex-start` depending on your layout needs.  `space-around` distributes space around items, while `flex-start` aligns them to the start of the container.
+
+3. **Inspect and Adjust:**  Use your browser's developer tools to examine the computed styles of the elements to identify the source of the excess width (padding, margins, borders). Correct these values to ensure the items fit within the container.
+
+Here's an example of a corrected CSS solution:
+
+/* bugSolution.css */
+.container { display: flex; justify-content: space-between; }
+.item { width: 25%; /* Reduced width to avoid overflow */ box-sizing: border-box; } /* This ensures padding and borders are included in the element's total width */
